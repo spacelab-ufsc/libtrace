@@ -1,3 +1,6 @@
+# turn on to build test cases
+# option(BUILD_TESTING "Build tests" ON)
+
 cmake_minimum_required(VERSION 3.10)
 
 project(libtrace VERSION 	 0.0.1
@@ -11,6 +14,8 @@ set(CMAKE_C_EXTENSIONS OFF)
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 	set(CMAKE_BUILD_TYPE MinSizeRel CACHE STRING "Build type" FORCE)
 endif()
+
+add_subdirectory(tests)
 
 file(GLOB LIBTRACE_SOURCES CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/src/*.c)
 
